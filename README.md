@@ -11,10 +11,14 @@ The first line is a number indicating the number of points in the set (N). Each 
 
 For example:
 
-3
-0 5
--1 4
+3 
+
+0 5 
+
+-1 4 
+
 7 2
+
 
 OUTPUT: the convex hull of the input set.
 
