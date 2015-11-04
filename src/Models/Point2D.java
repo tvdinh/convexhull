@@ -14,9 +14,11 @@ public class Point2D {
 	private final double x;
 	private final double y;
 	
-    /**
-     * Initializes a point with a given x,y 
-     */
+	/**
+	 * Initializes a point with a given x,y
+	 * @param x1
+	 * @param y1
+	 */
 	public Point2D(double x1, double y1) {
 		x = x1;
 		y = y1;

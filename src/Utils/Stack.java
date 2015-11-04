@@ -2,8 +2,13 @@ package Utils;
 
 import java.util.Iterator;
 
+/**
+ * 
+ * <tt>Stack</tt> implementation with generic type.
+ * Support typical stack operations: push, pop, peek.
+ * This implementation also supports item iteration.
+ */
 
-/*Adding Iteration API for traditional stack implementation*/
 public class Stack<Item> implements Iterable<Item> {
 	
 	private Node first = null;
@@ -14,14 +19,18 @@ public class Stack<Item> implements Iterable<Item> {
 		private Node nextNode;
 	}
 	
-	public Stack() {
-		this.size = 0;
-	}
+	public Stack() { this.size = 0;	}
 
-	public boolean isEmpty() {
-		return (first == null);
-	}
+	/**
+	 * Return true if the stack is empty, false if otherwise
+	 * @return
+	 */
+	public boolean isEmpty() {	return (first == null);	}
 	
+	/**
+	 * Add a new item to the stack
+	 * @param s
+	 */
 	public void push(Item s) {
 		Node oldfirst = first;
 		first = new Node();
@@ -30,10 +39,19 @@ public class Stack<Item> implements Iterable<Item> {
 		size++;
 	}
 	
+	/**
+	 * Only "check-out" the item at the head stack 
+	 * but not removing it
+	 * @return
+	 */
 	public Item peek() {
 		return first.item;
 	}
-	
+
+	/**
+	 * Remove and return the item at the head of the stack 
+	 * @return
+	 */
 	public Item pop() {
 		Item item = first.item;
 		first = first.nextNode;
@@ -42,14 +60,17 @@ public class Stack<Item> implements Iterable<Item> {
 	}
 	
 	/**
-	 * return the number of current item in the stack
+	 * return the number of current items on the stack
 	 * @return
 	 */
 	public int size() {return size;}
 	
+	
+	/**
+	 * return an iterator of all items on the stack 
+	 */
 	@Override
 	public Iterator<Item> iterator() {
-		// TODO Auto-generated method stub
 		return new ListIterator();
 	}
 	

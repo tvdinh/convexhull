@@ -15,14 +15,17 @@ public class MergeSort {
 	
 	public MergeSort() {}
 	
+	/**
+	 * Sort an array using Merge-Sort
+	 * @param a to be sorted array
+	 * @param c comparator
+	 */
 	public static void sort (Object[] a, @SuppressWarnings("rawtypes") Comparator c) {
 		Object [] aux = new Object[a.length]; 	
 		sort(c, a, aux, 0, a.length -1);
 	}
 	
-	/*
-	 * sort */
-	public static void sort(@SuppressWarnings("rawtypes") Comparator c, Object[] a, Object[] aux, int lo, int hi) {
+	private static void sort(@SuppressWarnings("rawtypes") Comparator c, Object[] a, Object[] aux, int lo, int hi) {
 		//TODO: Run Insertion sort if (hi -lo) <= CUTOFF -1
 		int mid = lo + (hi - lo)/2;
 		sort(c, a,aux,lo,mid);
@@ -31,9 +34,7 @@ public class MergeSort {
 		merge(c,a,aux,lo,mid,hi);
 	}
 	
-	/*
-	 * merge */
-	public static void merge (@SuppressWarnings("rawtypes") Comparator c, Object[] a, Object[] aux, int lo, int mid, int hi) {
+	private static void merge (@SuppressWarnings("rawtypes") Comparator c, Object[] a, Object[] aux, int lo, int mid, int hi) {
 		
 		assert isSorted(c, a, lo, mid);
 		assert isSorted(c, a, mid+1, hi);
@@ -58,7 +59,7 @@ public class MergeSort {
 		assert isSorted(c, a, lo, hi);
 	}
 	
-	/*
+	/**
 	 * swap element */
 	@SuppressWarnings("unused")
 	private static void exch(Object[] a, int j, int i) {
@@ -68,7 +69,7 @@ public class MergeSort {
 		a[j] = swap;
 	}
 	
-	/*
+	/**
 	 * implement binary order less (<) */
 	@SuppressWarnings("unchecked")
 	private static boolean less(@SuppressWarnings("rawtypes") Comparator c, Object v, Object u) {
@@ -77,9 +78,9 @@ public class MergeSort {
 	}
 	
 	
-	/*
-	 * check if the array is sorted */
-	public static boolean isSorted(@SuppressWarnings("rawtypes") Comparator c, Object[] a, int lo, int hi) {
+	/**
+	 */
+	private static boolean isSorted(@SuppressWarnings("rawtypes") Comparator c, Object[] a, int lo, int hi) {
 		for (int i = lo; i <= hi; i++)
 			if (less(c, a[i+1],a[i])) {
 				return false; 
