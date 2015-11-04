@@ -7,9 +7,10 @@ A rigorous definition of convex hull can be found from many sources on the web (
 This program takes an input as all the points of a set (in 2D Euclidean space) and returns the convex hull of that set.
 
 INPUT: a text file with the following format
-1. The first line is a number indicating the number of points in the set (N)
-2. Each of the next N lines contains the coordinator of the point in x, y format
+The first line is a number indicating the number of points in the set (N). Each of the next N lines contains the coordinator of the point in x, y format
+
 For example:
+
 3
 0 5
 -1 4
