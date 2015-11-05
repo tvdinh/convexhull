@@ -89,5 +89,4 @@ public class Stack<Item> implements Iterable<Item> {
 			throw new UnsupportedOperationException();
 		}
 	}
-
 }
