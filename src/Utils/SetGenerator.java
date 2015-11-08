@@ -52,7 +52,7 @@ public class SetGenerator {
      * @param lowerBound;
      * @param set's cardinality;
      */
-	public static void generateRandomSet(String fn, int upperBound, int lowerBound, int N) {
+	public static void generateRandomSet(String fn, int lowerBound, int upperBound, int N) {
 	
 		if (!sanityCheck(lowerBound, upperBound)) return;
 		File fout   = new File(fn);

@@ -27,6 +27,7 @@ public class MergeSort {
 	
 	private static void sort(@SuppressWarnings("rawtypes") Comparator c, Object[] a, Object[] aux, int lo, int hi) {
 		//TODO: Run Insertion sort if (hi -lo) <= CUTOFF -1
+		if (hi <= lo) {	return;}
 		int mid = lo + (hi - lo)/2;
 		sort(c, a,aux,lo,mid);
 		sort(c, a,aux,mid+1,hi);

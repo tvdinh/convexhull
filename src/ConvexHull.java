@@ -24,7 +24,8 @@ public class ConvexHull {
 	/**
 	 * Find the convex hull of a set (2D points) from an input file
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+		throws NullPointerException, IllegalArgumentException {
 
 		String fileName = "noInput.txt";			//default input
 		if (args.length > 0) fileName = args[0];
@@ -54,11 +55,11 @@ public class ConvexHull {
 				convexhull.push(set[i]);
 			}
 			//Export the convex hull to a file
-			String output = "convexhull_" + fileName;
+			String [] inputName = fileName.split("/");
+			String output = "convexhull_" + inputName[inputName.length-1];
 			exportConvexHull(convexhull,output);
 		}
-	}
-	
+	} 
     /**
      *   
      * @param StackIteration<Point2D>: the convexhull 
