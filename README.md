@@ -22,5 +22,6 @@ For example:
 
 OUTPUT: the convex hull of the input set.
 
+PS: Could be an interesting small assignment for a Java course/subject
 
 
